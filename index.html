@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Railway Reservation System</title>
+    <!-- Custom CSS -->
+    <style>
+        /body style/
+        body {
+            background-color: #f4f4f9;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .form-container {
+            margin-top: 30px;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+        }
+        .header p{
+            font-size:1.2em;
+            margin-top: 10px;
+        }
+        /form-container style/
+        .form-container{
+            background-color: #f4f4f9;
+            border-radius: 10px;
+            box-shadow: opx 4px 6px rgba(0,0,0,0.1);
+            padding:30px;
+            margin-top: 30px;
+        }
+        .form-container h3{
+            color:#333;
+            margin-bottom: 20px;
+
+        }
+        .form-container input,
+        .form-container select,
+        .form-container button {
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .form-container button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Online Railway Reservation System</h1>
+        <p>Book Your Train Tickets Online</p>
+    </div>
+
+    <!-- Reservation Form Section -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="form-container">
+                    <h3>Search for Train</h3>
+                    <form action="/search" method="POST">
+                        <div class="mb-3">
+                            <label for="departure" class="form-label">Departure City</label>
+                            <input type="text" class="form-control" id="departure" name="departure" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="destination" class="form-label">Destination City</label>
+                            <input type="text" class="form-control" id="destination" name="destination" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="travel_date" class="form-label">Travel Date</label>
+                            <input type="date" class="form-control" id="travel_date" name="travel_date" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Search Trains</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Registration Section -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="form-container">
+                    <h3>User Registration</h3>
+                    <form action="/register" method="POST">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Train Reservation Form Section -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="form-container">
+                    <h3>Reserve Your Ticket</h3>
+                    <form action="/reserve" method="POST">
+                        <div class="mb-3">
+                            <label for="train" class="form-label">Train</label>
+                            <select class="form-select" id="train" name="train" required>
+                                <option value="">Select a Train</option>
+                                <option value="train_1">Train 1</option>
+                                <option value="train_2">Train 2</option>
+                                <option value="train_3">Train 3</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="passenger_name" class="form-label">Passenger Name</label>
+                            <input type="text" class="form-control" id="passenger_name" name="passenger_name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="seat_class" class="form-label">Seat Class</label>
+                            <select class="form-select" id="seat_class" name="seat_class" required>
+                                <option value="economy">Economy</option>
+                                <option value="business">Business</option>
+                                <option value="first_class">First Class</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Book Ticket</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer text-center" style="margin-top: 50px; padding: 20px; background-color: #343a40; color: white;">
+        <p>&copy; 2024 Online Railway Reservation System. All Rights Reserved.</p>
+    </div>
+
+</body>
+</html>
